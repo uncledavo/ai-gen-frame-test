@@ -9,11 +9,11 @@ export default async function handler(req, res) {
 
       // Call the Replicate API with the text input
       const response = await axios.post('https://api.replicate.com/v1/predictions', {
-        version: 'YOUR_MODEL_VERSION', // Specify your Stable Diffusion model version
+        version: 'ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4', // Specify your Stable Diffusion model version
         input: { prompt: textInput },
       }, {
         headers: {
-          'Authorization': `Token YOUR_REPLICATE_API_TOKEN`,
+          'Authorization': `Token ${process.env.REPLICATE_API_TOKEN}`,
           'Content-Type': 'application/json',
         },
       });
