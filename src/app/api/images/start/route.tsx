@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { ImageResponse } from "next/og";
+import Image from 'next/image';
 import { join } from "path";
 import * as fs from "fs";
 
@@ -22,13 +23,11 @@ export async function GET() {
           backgroundColor: "white",
         }}
       >
-        <img
-          style={{
-            height: "100%", // Make image full height
-            objectFit: "cover", // Cover the area without losing aspect ratio
-            width: "35%", // Image takes up 40% of the container's width
-          }}
+        <Image
+          layout="fill"
+          objectFit="cover"
           src="https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2639523a-690b-47af-16ab-ca07697fd000/original"
+          alt="Echo The Dolphin"
         />
         <div
           style={{
@@ -61,7 +60,7 @@ export async function GET() {
               overflow: "hidden",
             }}
           >
-            Type something in the text input below and Echo will say it back.
+            Describe something in the text input below, and see the image change.
           </div>
         </div>
       </div>
